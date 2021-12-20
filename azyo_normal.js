@@ -926,6 +926,9 @@ class AzyoViewPort {
         }
 
         var response = this.finished.check_results()
+        
+        console.log("--->"+response);
+        
         if (response['status'] === 'complete') {
             this.kyc_number = response['kyc_number']
             this.finished.render_view(this.root, {'kyc_number': this.kyc_number})
@@ -933,7 +936,8 @@ class AzyoViewPort {
             this.after_finish()
         }
         else {
-
+console.log(response);
+            
             var current_step = response['step']
             var current_index = this.index[current_step]
             this.register_views([
@@ -944,7 +948,7 @@ class AzyoViewPort {
                 [BacksideView, {'VideoUtils': VideoUtils}],
                 [ResultGenView, {}],
             ], (current_index===0)? true: false)
-            
+            console.log("current index="+current_index);
             if (current_index!==0) {
                 this.init_view(current_index)
             }
