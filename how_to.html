@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>azyo | How To</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+    body {
+        text-align: center;
+        font-family: consolas;
+    }
+
+    .container {
+        margin-top: 3rem;
+    }
+
+    .row {
+        margin-bottom: 3rem;
+    }
+
+    .code {
+        background-color: rgb(238, 238, 238);
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    p {
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>How to use azyo API</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Start by importing azyo cdn</h3>
+
+                <div class="code">
+                    <pre>&lt;link href="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_simplified.css" rel="stylesheet" /&gt;<br>&lt;script src="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_simplified_v1.0.js"&gt;&lt;/script&gt;</pre>
+                </div>
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col">
+                <p>
+                You can use any html block as the root for azyo widget but for the best experience we suggest using bootstrap modal.
+                Create a bootstrap modal.
+                </p>
+
+                <div class="code">
+                    <pre>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;<br>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"&gt;&lt;/script&gt;<br>&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>This is how your html should look like</h3>
+
+                <div class="code">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Page Title&lt;/title&gt;
+
+    &lt;!-- bootstrap cdn --&gt;
+    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+    &lt;!-- azyo cdn --&gt;
+    &lt;link href="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_sheet.css" rel="stylesheet" /&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_normal.js"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- If you prefer button --&gt;
+    &lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"&gt;
+    view
+    &lt;/button&gt;
+    
+    &lt;!-- If you prefer link --&gt;
+    &lt;a style="color: blue; text-decoration: underline; cursor: pointer;" 
+        data-toggle="modal" data-target="#exampleModal"&gt;
+        view
+    &lt;/a&gt;
+
+    &lt;div class="modal fade" id="exampleModal" 
+        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+        &lt;!-- from script here --&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>Initializing azyo scripts</h3>
+                <br>
+                <p>
+                    create an instance of <span style="background-color: rgb(238, 238, 238);">AzyoViewPort</span> class and initialize it with the following:<br><br>
+                    <b>root:</b> the div where the azyo content will be loaded<br>
+                    <b>client_code:</b> 16 digit client code provided by azyo<br>
+                    <b>user_name:</b> the user identifier for which the azyo results will be generated<br>
+                    <b>meta:</b> User meta data which includes country, state and document_type for the user<br>
+                    <b>on_finish:</b> function that will be called once the results are generated
+                </p>
+                
+                <div class="code">
+<pre>
+    &lt;script&gt;
+        const root = document.getElementById('exampleModal')
+        
+        AV = new AzyoViewPort(root, 
+        client_code=`0000111100001111`, user_name=`test user 6`,
+        meta = {'country': `India`, 'state': `Maharashtra`, 'document_type': `Driving License`},
+        on_finish = (results) => {
+            console.log('Results Obtained')
+            console.log(results)
+            
+            $.ajax({
+                url: '', // where ever you want to send the data, 
+                data: JSON.stringify(results),
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                processData: false,
+                success: res => {},
+                async: false,
+                error: err => console.error('err')
+            });
+
+            console.log('You can Do Anything With these Results')
+        })
+
+        
+    &lt;/script&gt;
+</pre>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>The Results</h3>
+                
+                <p>
+                    Each time AzyoViewport object is initialized it checks wather the results for the respective users are already generated.
+                    If results are generated it calls on_finish as the indicator for result status.<br>
+                    Results object received by on_finish method contains 2 things:<br>
+                    <b>match precentage:</b> precentage match between selfie image and the document image.<br>
+                    <b>selfie_image:</b> base64 encoded selfie image of the user.
+                </p>
+
+                <div class="code">
+                    <pre>results = {<br>    match_precentage: 63.91216375197811,<br>    selfie_image: "data:image/png;base64,iVBORw0KGgoAAAANSUhE...<br>}</pre>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Final HTML should look like</h3>
+
+                <div class="code">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Page Title&lt;/title&gt;
+
+    &lt;!-- bootstrap cdn --&gt;
+    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+    &lt;!-- azyo cdn --&gt;
+    &lt;link href="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_sheet.css" rel="stylesheet" /&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/cskaa/azyo_2step_public/azyo_normal.js"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- If you prefer button --&gt;
+    &lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"&gt;
+        view
+    &lt;/button&gt;
+
+    &lt;!-- If you prefer link --&gt;
+    &lt;a style="color: blue; text-decoration: underline; cursor: pointer;" 
+        data-toggle="modal" data-target="#exampleModal"&gt;
+        view
+    &lt;/a&gt;
+
+    &lt;div class="modal fade" id="exampleModal" 
+        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+        &lt;!-- from script here --&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+    const root = document.getElementById('exampleModal')
+    
+    AV = new AzyoViewPort(root, 
+    client_code=`0000111100001111`, user_name=`userUniqueId_Email_Or_userName`,
+    meta = {'country': `India`, 'state': `Maharashtra`, 'document_type': `Driving License`},
+    on_finish = (results) => {
+        console.log('Results Obtained')
+        console.log(results)
+        
+        $.ajax({
+            url: '', // where ever you want to send the data, 
+            data: JSON.stringify(results),
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            processData: false,
+            success: res => {},
+            async: false,
+            error: err => console.error('err')
+        });
+
+        console.log('You can Do Anything With these Results')
+    })
+
+    
+&lt;/script&gt;
+
+
+&lt;/html&gt;
+</pre>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h5>For more details contact us here: support@azyo.io</h5>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
