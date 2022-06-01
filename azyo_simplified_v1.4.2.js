@@ -725,7 +725,7 @@ var locs = [
       },
       {
         "country": "United Kingdom",
-        "states": []
+        "states": ["London"]
       },
       {
         "country": "United States",
