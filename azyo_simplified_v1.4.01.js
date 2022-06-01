@@ -1181,14 +1181,14 @@ class DocTypeView extends AzyoView {
         sta_cont.innerHTML = sta_aggappend
 
         let sel_state = this.args['meta']['state']
-        $('#azyo_state option[value='+sel_state+']').prop('selected', true)
+        $('#azyo_state option[value="'+sel_state+'"]').prop('selected', true)
         let cc = document.getElementById("azyo_state")
         if (cc.value == ""){
           cc.disabled = true
         }
 
         let sel_country = this.args['meta']['country']
-        $('#azyo_country option[value='+sel_country+']').prop('selected', true)
+        $('#azyo_country option[value="'+sel_country+'"]').prop('selected', true)
         let country_cont = document.getElementById("azyo_country")
         country_cont.addEventListener("change", function () {
             document.getElementById("azyo_state").disabled = false
