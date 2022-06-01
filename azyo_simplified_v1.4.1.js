@@ -728,7 +728,7 @@ var locs = [
         "states": []
       },
       {
-        "country": "United States",
+        "country": "UnitedStates",
         "states": ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
       },
       {
@@ -1162,7 +1162,9 @@ class DocTypeView extends AzyoView {
         let aggappend = ""
         for (let i = 0; i < countries.length; i++){
             let tcou = countries[i]
-            let oneline = `<option class= "cou" value="${tcou}">${tcou}</option>`
+			let tv = tcou.replace(/\s/g, '')
+			
+            let oneline = `<option class= "cou" value="${tv}">${tcou}</option>`
             aggappend = aggappend+oneline
         }
         let cou_cont = document.getElementById("azyo_country")
